@@ -6,7 +6,6 @@ let tasks = [
     isDone: false,
   },
 ];
-
 function fillTasksOnThePage() {
   document.getElementById("tasks").innerHTML = "";
   for (let task of tasks) {
@@ -37,10 +36,12 @@ document.getElementById("addBtn").addEventListener("click", function () {
 
 document.getElementById("addTask").addEventListener("click", function () {
   let taskTitle = document.getElementById("taskInput").value;
+  let now = new Date();
+  let date = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
   document.getElementById("taskInput").value = "";
   let taskObject = {
     title: taskTitle,
-    date: "10/02/2023",
+    date: date,
     isDone: false,
   };
   tasks.push(taskObject);
