@@ -1,0 +1,24 @@
+/* Fonts */
+@font-face {
+  font-family: "Readex Pro";
+  src: url("../fonts/ReadexPro-VariableFont.ttf");
+}
+
+:root {
+  --main-color: #5271ff;
+  --sub-color: #2b2b2b;
+  --sub-color-25: #cacaca;
+  --task-bgc: #f0f0f0;
+  --task-done: #d5ebcb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Readex Pro";
+}
+
+html {
+  direction: rtl;
+}
