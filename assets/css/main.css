@@ -42,16 +42,21 @@ body {
 .mhamy {
   width: 100%;
   margin: 20px 0;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
   /* header */
   .header {
     .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      position: relative;
+      margin-bottom: -5px;
       /* logo */
       .logo {
         margin-right: -4px;
+        margin-bottom: -4px;
       }
       /* end logo */
 
@@ -65,7 +70,6 @@ body {
         align-items: flex-end;
         border: 0;
         background-color: transparent;
-        margin-bottom: 7px;
         margin-left: -2px;
         .bxs-message-square-add {
           transform: rotate(-90deg);
@@ -77,6 +81,74 @@ body {
     }
   }
   /* end header */
+
+  /* newTaskBox */
+  .addTaskBox {
+    display: none;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 10px;
+    background-color: var(--task-bgc);
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+    .input {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      gap: 10px;
+      .taskInput {
+        border: 1px solid var(--main-color);
+        border-radius: 5px;
+        padding: 0 0.7rem;
+        height: 26px;
+        color: var(--main-color);
+        font-size: 12px;
+        &:focus {
+          outline-color: var(--main-color);
+        }
+      }
+      & span {
+        color: var(--main-color);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: -5px;
+      }
+    }
+    .btns {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .btn {
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        border-radius: 5px;
+        height: 26px;
+        padding: 0 0.7rem;
+        font-size: 12px;
+      }
+
+      /* addTask */
+      .addTask {
+        color: var(--main-color);
+        border: 1px solid var(--main-color);
+        background-color: rgba(82, 113, 255, 0.1);
+      }
+      /* end addTask */
+
+      /* closeTaskBox */
+      .closeTaskBox {
+        color: crimson;
+        border: 1px solid crimson;
+        background-color: rgba(220, 20, 60, 10%);
+      }
+      /* end closeTaskBox */
+    }
+  }
+  /* end newTaskBox */
 
   /* tasks section */
 
