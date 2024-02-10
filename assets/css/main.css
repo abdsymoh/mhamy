@@ -9,7 +9,7 @@
   --sub-color: #2b2b2b;
   --sub-color-25: #cacaca;
   --task-bgc: #f0f0f0;
-  --task-done: #d5ebcb;
+  /* --task-done: #d5ebcb; */
 }
 
 * {
@@ -17,8 +17,193 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Readex Pro";
+  font-size: 15px;
+  appearance: none;
 }
 
 html {
   direction: rtl;
+}
+
+body {
+  background-color: var(--sub-color);
+  color: var(--sub-color);
+}
+
+/* global rules */
+.container {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* mhamy project */
+.mhamy {
+  width: 100%;
+  margin: 20px 0;
+  /* header */
+  .header {
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      /* logo */
+      .logo {
+        margin-right: -4px;
+      }
+      /* end logo */
+
+      /* addBtn */
+      .addBtn {
+        cursor: pointer;
+        width: 52px;
+        height: 52px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        border: 0;
+        background-color: transparent;
+        margin-bottom: 7px;
+        margin-left: -2px;
+        .bxs-message-square-add {
+          transform: rotate(-90deg);
+          font-size: 32px;
+          color: var(--main-color);
+        }
+      }
+      /* end addBtn */
+    }
+  }
+  /* end header */
+
+  /* tasks section */
+
+  .tasks {
+    width: 100%;
+    .tasks-content {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+
+      /* task */
+
+      .task {
+        background-color: var(--task-bgc);
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--main-color);
+        display: flex;
+        justify-content: space-between;
+        transition: 0.3s box-shadow ease;
+        &:hover {
+          box-shadow: 0 0 7px rgba(82, 113, 255, 70%);
+        }
+        .task-text {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-flow: column wrap;
+          gap: 10px;
+          .task-subject {
+            color: var(--main-color);
+          }
+          .date {
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            gap: 1px;
+            color: var(--sub-color-25);
+          }
+        }
+        .task-mange {
+          align-self: flex-end;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+
+          /* btn */
+          .btn {
+            width: 26px;
+            height: 26px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 7px 7px 7px 3px;
+            cursor: pointer;
+            border: 0;
+            background-color: transparent;
+            transition: 0.3s background-color ease;
+            &:focus {
+              color: #fff;
+            }
+          }
+          /* end btn */
+
+          /* deleteBtn */
+          .deleteBtn {
+            padding-top: 2px;
+            color: crimson;
+            border: 2px solid crimson;
+            &:focus {
+              background-color: crimson;
+            }
+            &:hover {
+              background-color: rgba(220, 20, 60, 10%);
+            }
+          }
+          /* end deleteBtn */
+
+          /* editBtn */
+          .editBtn {
+            padding-top: 2px;
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            &:focus {
+              background-color: var(--main-color);
+            }
+            &:hover {
+              background-color: rgba(82, 113, 255, 0.1);
+            }
+          }
+          /* end editBtn */
+
+          /* checkBtn */
+          .checkBtn {
+            padding-top: 2px;
+            color: mediumseagreen;
+            border: 2px solid mediumseagreen;
+            &:focus {
+              background-color: mediumseagreen;
+            }
+            &:hover {
+              background-color: rgba(60, 179, 113, 0.1);
+            }
+          }
+          /* end checkBtn */
+
+          /* unCheckBtn  */
+          .unCheckBtn {
+            display: none;
+            padding-top: 2px;
+            color: #fff;
+            background-color: crimson;
+            border: 2px solid crimson;
+          }
+          /* end unCheckBtn  */
+        }
+      }
+
+      /* end task */
+    }
+  }
+
+  /* end tasks section */
 }
