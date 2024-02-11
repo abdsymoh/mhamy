@@ -77,13 +77,23 @@ function deleteTask(index) {
 // Edit Task
 
 function editTask(index) {
+  let task = tasks[index];
   document.getElementById("editTaskBox").style.display = "flex";
-  document.getElementById("editTask").addEventListener("click", function () {
-    let newTaskTitle = document.getElementById("NewTaskInput").value;
-    let task = tasks[index];
-    task.title = newTaskTitle;
+  document.getElementById("editTaskBox").innerHTML = `
+      <p><i class="fa-solid fa-spell-check"></i> رجاء إدخال عنوان المهمة الجديد</p>
+      <input type="text" id="NewTaskInput" />
+      <span>
+        <button id="yesBtn" class="btn yesBtn">تعديل</button>
+        <button id="noBtn" class="btn noBtn"><i class="fa-solid fa-xmark"></i></button>
+      </span>
+  `;
+  document.getElementById("yesBtn").addEventListener("click", function () {
+    let NewTaskInput = document.getElementById("NewTaskInput").value;
+    task.title = NewTaskInput;
+    document.getElementById("editTaskBox").style.display = "none";
     fillTasksOnThePage();
-    document.getElementById("taskInput").value = "";
+  });
+  document.getElementById("noBtn").addEventListener("click", function () {
     document.getElementById("editTaskBox").style.display = "none";
   });
 }
