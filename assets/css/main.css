@@ -61,6 +61,7 @@ body {
     }
   }
   /* end header */
+
   .addTaskBox {
     padding: 10px;
     background-color: #fff;
@@ -97,6 +98,29 @@ body {
       border-radius: 5px;
     }
   }
+
+  .confirmDeleteTask {
+    width: 100%;
+    background-color: var(--task-bgc);
+    border-radius: 5px;
+    border: 1px solid rgba(82, 113, 255, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    z-index: 999;
+    color: var(--main-color);
+    .yesBtn {
+      background-color: rgba(220, 20, 60, 0.3);
+      color: crimson;
+    }
+    .noBtn {
+      background-color: rgba(82, 113, 255, 0.3);
+      color: var(--main-color);
+    }
+  }
+
   /* tasks */
   .tasks {
     background-color: #fff;
