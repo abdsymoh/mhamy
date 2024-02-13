@@ -205,7 +205,13 @@ body {
         .checkBtn {
           background-color: mediumseagreen;
         }
+        .unCheckBtn {
+          background-color: crimson;
+        }
       }
+    }
+    .taskIsDone {
+      background-color: rgba(158, 253, 160, 0.2);
     }
   }
   /* end tasks */
