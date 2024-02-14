@@ -16,6 +16,9 @@ let tasks = [
     isDone: false,
   },
 ];
+
+tasks = JSON.parse(localStorage.getItem("tasks"));
+
 function fillTasksOnThePage() {
   document.getElementById("tasks").innerHTML = "";
   let index = 0;
@@ -58,6 +61,7 @@ document.getElementById("addTask").addEventListener("click", function () {
     isDone: false,
   };
   tasks.push(taskObject);
+  storeTask();
   fillTasksOnThePage();
   document.getElementById("addTaskBox").style.display = "none";
 });
@@ -77,6 +81,7 @@ function deleteTask(index) {
   document.getElementById("deleteTaskBtn").addEventListener("click", function () {
     tasks.splice(index, 1);
     document.getElementById("confirmDeleteTask").style.display = "none";
+    storeTask();
     fillTasksOnThePage();
   });
   document.getElementById("cancelDeleteTaskBtn").addEventListener("click", function () {
@@ -101,6 +106,7 @@ function editTask(index) {
     let NewTaskInput = document.getElementById("NewTaskInput").value;
     task.title = NewTaskInput;
     document.getElementById("editTaskBox").style.display = "none";
+    storeTask();
     fillTasksOnThePage();
   });
   document.getElementById("cancelEditTaskBtn").addEventListener("click", function () {
@@ -112,5 +118,12 @@ function editTask(index) {
 function toggleTaskCompletion(index) {
   let task = tasks[index];
   task.isDone = !task.isDone;
+  storeTask();
   fillTasksOnThePage();
+}
+
+// store function
+function storeTask() {
+  let tasksString = JSON.stringify(tasks);
+  localStorage.setItem("tasks", tasksString);
 }

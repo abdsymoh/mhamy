@@ -181,19 +181,21 @@ body {
       .taskContent {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         flex-flow: column;
         gap: 10px;
         .taskTitle {
           color: var(--main-color);
+          text-align: right;
         }
         .date {
           color: var(--sub-color-25);
+          text-align: right;
         }
       }
       .taskActions {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 10px;
         .deleteBtn {
