@@ -17,7 +17,11 @@ let tasks = [
   },
 ];
 
-tasks = JSON.parse(localStorage.getItem("tasks"));
+function getTasksFromStorage() {
+  let retrievedTasks = JSON.parse(localStorage.getItem("tasks"));
+  tasks = retrievedTasks ?? [];
+}
+getTasksFromStorage();
 
 function fillTasksOnThePage() {
   document.getElementById("tasks").innerHTML = "";
